@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Called It — The prediction desk</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="/">c<span>!</span></a>
+        <div class="rail-label">CALLED IT</div>
+        <a class="nav active" href="/">◈</a
+        ><a class="nav" href="/overlay" target="_blank" title="Open OBS overlay">▣</a>
+        <div class="rail-bottom">V.01<br />✳</div>
+      </aside>
+      <main>
+        <header>
+          <div class="breadcrumb">STREAM TOOLS <span>/</span> CALLED IT</div>
+          <div class="status"><i></i><span id="connection">Connecting…</span></div>
+        </header>
+        <section class="intro">
+          <div>
+            <div class="eyebrow">CHAT HAS A FEELING.</div>
+            <h1>Put it on<br />the <em>record.</em><span class="star">✳</span></h1>
+            <p>Big predictions. Questionable confidence.<br />Let your chat call what happens next.</p>
+          </div>
+          <div class="intro-right">
+            <span class="pill">VIEWER POWERED PREDICTIONS</span>
+            <div class="example">
+              <span>THE CHAT COMMAND</span><code>!call <b>we win this</b> in <b>5m</b></code
+              ><small>Make a call. Pick a side. Claim the glory.</small>
+            </div>
+            <a class="button" href="/overlay" target="_blank">Open stream overlay <span>↗</span></a
+            ><span class="obs-note">OBS READY · 1920 × 1080 · TRANSPARENT</span>
+          </div>
+        </section>
+        <div class="stats">
+          <div><span>ON THE BOARD</span><strong id="stat-active">0</strong><small>/ 5 slots</small></div>
+          <div><span>CALLS MADE</span><strong id="stat-total">0</strong><small>bold claims</small></div>
+          <div><span>SETTLED</span><strong id="stat-resolved">0</strong><small>receipts collected</small></div>
+          <div><span>POINTS AWARDED</span><strong id="stat-points">0</strong><small>bragging rights</small></div>
+        </div>
+        <div class="workspace">
+          <section>
+            <div class="section-head">
+              <h2><i class="live-dot"></i> The call board <span id="call-count">00</span></h2>
+              <span class="subtle">CONFIDENCE IS OPTIONAL. RECEIPTS AREN’T.</span>
+            </div>
+            <div id="cards" class="cards"></div>
+            <div id="empty" class="empty" hidden>
+              <span>↗</span>
+              <h3>The next big call is yours.</h3>
+              <p>Type <code>!call your prediction in 5m</code> in chat.</p>
+            </div>
+            <div class="legend">
+              <span><i class="green"></i> BACK THE CALL</span><span><i class="pink"></i> DOUBT THE CALL</span
+              ><span>CALLER +100 PT · CORRECT SIDE +25 PT</span>
+            </div>
+            <div class="how">
+              <span>THE PLAYBOOK</span>
+              <div>
+                <b>01</b>
+                <p><strong>Call your shot</strong><small>One live prediction per viewer.</small></p>
+                <b>02</b>
+                <p><strong>Choose your side</strong><small>Back it. Doubt it. Own it.</small></p>
+                <b>03</b>
+                <p><strong>Collect the receipts</strong><small>Mods settle it. Oracles rise.</small></p>
+              </div>
+            </div>
+          </section>
+          <aside class="right-column">
+            <section class="leaderboard">
+              <div class="section-head">
+                <h2>✳ The oracles</h2>
+                <code>!oracle</code>
+              </div>
+              <p class="subtle">LESS LUCK. MORE “I TOLD YOU SO.”</p>
+              <div id="leaderboard"></div>
+            </section>
+            <section class="chat-panel">
+              <div class="section-head">
+                <h2>Chat feed</h2>
+                <span class="live-label">● LIVE</span>
+              </div>
+              <div id="messages" aria-live="polite"></div>
+              <form id="chat-form" hidden>
+                <label for="viewer">Demo viewer</label
+                ><select id="viewer">
+                  <option value="0">lunarwitch</option>
+                  <option value="1">pixelpilot</option>
+                  <option value="2">noodlebrain</option>
+                  <option value="3">itsmilo</option>
+                </select>
+                <div class="input-row">
+                  <input
+                    id="command"
+                    aria-label="Chat command"
+                    placeholder="!call something wild in 2m"
+                    maxlength="240"
+                    required
+                  /><button title="Send command">↗</button>
+                </div>
+              </form>
+              <button id="seed" class="text-button" hidden>+ Fill empty demo slots</button>
+            </section>
+          </aside>
+        </div>
+        <footer>
+          <span>CALLED IT. <b>PROVE IT.</b></span
+          ><span id="mode">LOCAL STREAM COMPANION</span>
+        </footer>
+      </main>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>

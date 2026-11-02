@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Called It — OBS Overlay</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="overlay">
+    <div id="overlay-stage">
+      <section class="battle" aria-label="Streamer versus chat">
+        <div class="battle-labels">
+          <strong>STREAMER <span id="streamer-wins">0</span></strong
+          ><span>STREAMER VS CHAT</span><strong><span id="chat-wins">0</span> CHAT</strong>
+        </div>
+        <div
+          class="battle-track"
+          role="meter"
+          aria-label="Chat control"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="50"
+          id="battle-meter"
+        >
+          <div id="battle-fill"></div>
+          <i></i>
+        </div>
+      </section>
+      <div id="result-moment" aria-live="polite" hidden></div>
+      <div class="overlay-board">
+        <div class="overlay-heading">
+          <strong>CALLED<span> IT.</span></strong
+          ><span><i class="live-dot"></i> CHAT CALLS THE SHOTS</span>
+        </div>
+        <div id="cards" class="cards"></div>
+        <section id="empty" class="overlay-oracles" hidden>
+          <h2>✳ THE ORACLES</h2>
+          <div id="leaderboard"></div>
+          <p>YOUR NEXT BIG CALL STARTS WITH <b>!call</b></p>
+        </section>
+        <div class="overlay-footer">
+          !call &lt;prediction&gt; in &lt;N&gt;m <span>MAKE IT. BACK IT. PROVE IT.</span>
+        </div>
+      </div>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>
