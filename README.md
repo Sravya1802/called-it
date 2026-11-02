@@ -4,7 +4,7 @@
 
 A local Twitch chatbot plus a transparent OBS overlay in one process. Node.js + Express + ws; no build step, no database, no cloud account. Runs on the streamer's own machine and never sends credentials to the browser.
 
-![The OBS overlay: five prediction cards, countdowns, vote counts, and a CALLED IT. moment](docs/overlay.png)
+![Overlay demo: calls fill the board, votes tick, a CALLED IT. moment fires with confetti, a BUSTED. ruling, and an expired call](docs/overlay-demo.gif)
 
 ## What it does
 
